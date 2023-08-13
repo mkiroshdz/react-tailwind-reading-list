@@ -8,7 +8,9 @@ const library = raw.library.map(item => {
 }); 
 
 const getBooks = (filters) => {
-  return library;
+  const dict = {};
+  library.forEach((book) => dict[book.ISBN] = book)
+  return dict;
 }
 
 export default { getBooks }
